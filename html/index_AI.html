@@ -117,7 +117,7 @@
             
 
         // 음성재 확인창 및 예외처리
-        if(transcript == '화장실' || transcript == '화장실' ) {
+        if(transcript.indexOf('화장실') == 0) {
             voice_text.innerText = ( dummy_text + '\u00A0' + transcript + '\u00A0' + dummy_text2 );
             Cancellation.style.display = "none";
         } else if (transcript == '전시장' || transcript == '진행중인 행사'){
@@ -136,10 +136,12 @@
             Confirm.style.display = "none";
         }
         console.log(transcript);
-        
-        for(let i=0; i<voicelist.length; i++){
-            console.log("sd");
+
+        if(transcript.indexOf('화장실') == 0){
+            console.log("통과");
         }
+        
+  
         })
 
 
@@ -148,7 +150,7 @@
         // 음성 확인창 
         Confirm.addEventListener("click" , function(){
             console.log(transcript)
-        if( transcript == '화장실'){
+        if(transcript.indexOf('화장실') == 0){
             window.location.href = "https://juniklee.github.io/yeso-b/html/index_expoC.html"
         }else if( transcript == "진행중인 행사"){
             window.location.href = "https://juniklee.github.io/yeso-b/html/index_ing.html"
