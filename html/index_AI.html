@@ -96,19 +96,16 @@
             voice_text.innerText = ( dummy_text + '\u00A0' + transcript + '\u00A0' + dummy_text2 );
             console.log(transcript);
 
-            // if(true){
-            //     alert("음성을 제대로 인식하지 못하였습니다. 다시한번 말씀해주세요")
-            // }
             })
 
             Confirm.addEventListener("click" , function(){
                 console.log(transcript)
             if( transcript == "화장실" || transcript == "화장실 위치" || transcript == "화장실 어디야"  || transcript == "화장실 안내" || transcript == "주차" ){
-                window.location.href = "https://juniklee.github.io/yeso-b/html/index_expoC.html"
+                window.location.href = "https://juniklee.github.io/Yesu_c/html/index_expoC.html"
             }else if( transcript == "행사" || transcript == "행사 안내" || transcript == "전시회"  || transcript == "전시회 안내" || transcript == "진행중인 행사"){
-                window.location.href = "https://juniklee.github.io/yeso-b/html/index_ing.html"
+                window.location.href = "https://juniklee.github.io/Yesu_c/html/index_ing.html"
             }else if( transcript == "주차장" || transcript == "주차장 위치" || transcript == "주차장 어디야"  || transcript == "주차장 안내" || transcript == "주차"){
-                window.location.href = "https://juniklee.github.io/yeso-b/html/index_parking.html"
+                window.location.href = "https://juniklee.github.io/Yesu_c/html/index_parking.html"
             }
             })     
 
