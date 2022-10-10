@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인화면</title>
+    <link rel="stylesheet" href="../css/style_ai.css">
+    <script src="https://kit.fontawesome.com/5ccccc0448.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="modal" id="modal">
+        <p id="voice_text">원하시는 서비스를 말씀해보세요</p> 
+            <div class="button_contain">
+                <button id="Confirm">확인</button>
+                <button id="Cancellation">취소</button>
+            </div>
+    </div>
+
+    <div class="video_all">
+        <figure>
+            <video id="vid" src="../video/ai_1.mp4" width="100%" height="100%" autoplay="autoplay" ></video>
+        </figure>
+    </div>
+    
+    <div class="container_all">
+        <header>
+            <img class="expo_logo" src="../img/expo_logo_w.png" alt="expo_logo">
+            <div class="home_btn">
+                <a href="../index.html"><i class="fa-solid fa-house">&nbsp;처음으로</i></a>
+            </div>
+        </header>
+
+        <section class="ai_contents">
+
+            <div class="ai_contents_top">
+                <p>안녕하세요.</p>
+                <p>무엇을 도와드릴까요 ?</p>
+            </div>
+
+            <div class="ai_contents_bottom">
+                <div class="ai_contents_bottom_box">
+                    <a href="./index_ing.html"><i class="fa-solid fa-calendar-check">&nbsp;진행중인 행사</i></a>
+                </div>
+                <div class="ai_contents_bottom_box">
+                    <a href="./index_guide.html"><i class="fa-solid fa-map-location-dot">&nbsp;엑스포 가이드</i></a>
+                </div>
+                <div class="ai_contents_bottom_box">
+                    <a href="./index_parking.html"><i class="fa-solid fa-square-parking">&nbsp;주차안내</i></a>
+                </div>
+            </div>
+
+            <!--마이크 부분-->
+            <div class="box" id="mic">
+                <div class="object">
+                       <div class="outline">
+                       </div>
+                       <div class="outline" id="delayed">
+                       </div>
+                       <div class="button">
+                       </div>
+                       <div class="button" id="circlein">
+                           <svg class="mic-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve" style="fill:#1E2D70">
+                            <g><path d="M500,683.8c84.6,0,153.1-68.6,153.1-153.1V163.1C653.1,78.6,584.6,10,500,10c-84.6,0-153.1,68.6-153.1,153.1v367.5C346.9,615.2,415.4,683.8,500,683.8z M714.4,438.8v91.9C714.4,649,618.4,745,500,745c-118.4,0-214.4-96-214.4-214.4v-91.9h-61.3v91.9c0,141.9,107.2,258.7,245,273.9v124.2H346.9V990h306.3v-61.3H530.6V804.5c137.8-15.2,245-132.1,245-273.9v-91.9H714.4z"/></g>
+                           </svg>
+                        </div>
+                </div>
+           </div>
+        </section>
+    </div>
+<script>
+    let transcript
+    // const speech = new webkitSpeechRecognition;
+    if(!("webkitSpeechRecognition" in window)){
+        alert("현재 브라우저에서는 Speech 지원이 불가능합니다 Chome 브라우저로 실행하세요.");
+    } else {
+        const speech = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)(); 
+        const Confirm = document.getElementById('Confirm');
+        const Cancellation = document.getElementById('Cancellation');
+        const voice_text = document.getElementById('voice_text');
+        const dummy_text = "말씀하신 내용이"
+        const dummy_text2 = "이(가) 맞습니까?"
+        const modal = document.getElementById('modal');
+       
+
+         
+        document.getElementById("mic").addEventListener("click", () => {
+        speech.start();
+        modal.style.display = "block";
+        })
+            speech.addEventListener("result",(event) =>{
+            // console.log(event);       
+            transcript = event["results"][0][0].transcript; 
+            Confirm.style.display = "block";
+            Cancellation.style.display = "block";
+            voice_text.innerText = ( dummy_text + '\u00A0' + transcript + '\u00A0' + dummy_text2 );
+            console.log(transcript);
+
+            // if(true){
+            //     alert("음성을 제대로 인식하지 못하였습니다. 다시한번 말씀해주세요")
+            // }
+            })
+
+            Confirm.addEventListener("click" , function(){
+                console.log(transcript)
+            if( transcript == "화장실" || transcript == "화장실 위치" || transcript == "화장실 어디야"  || transcript == "화장실 안내" || transcript == "주차" ){
+                window.location.href = "https://juniklee.github.io/yeso-b/html/index_expoC.html"
+            }else if( transcript == "행사" || transcript == "행사 안내" || transcript == "전시회"  || transcript == "전시회 안내" || transcript == "진행중인 행사"){
+                window.location.href = "https://juniklee.github.io/yeso-b/html/index_ing.html"
+            }else if( transcript == "주차장" || transcript == "주차장 위치" || transcript == "주차장 어디야"  || transcript == "주차장 안내" || transcript == "주차"){
+                window.location.href = "https://juniklee.github.io/yeso-b/html/index_parking.html"
+            }
+            })     
+
+            Cancellation.addEventListener("click" , function(){
+                console.log('취소버튼 클릭')
+                modal.style.display = "none";
+                speech.stop();
+                voice_text.innerText = '원하시는 서비스를 말씀해보세요'
+            }) 
+    }
+</script>
+</body>
+</html>
