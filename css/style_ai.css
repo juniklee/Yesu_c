@@ -1,1 +1,211 @@
-*{box-sizing:border-box;margin:0;padding:0}a{color:#fff;text-decoration:none}@font-face{font-family:MICEGothic Bold;font-style:normal;font-weight:700;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic%20Bold.woff2) format("woff2")}@font-face{font-family:MICEGothic;font-style:normal;font-weight:400;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic.woff2) format("woff2")}body{color:#333;font-family:MICEGothic;font-size:16px;width:100%}.video_all,video{overflow:hidden}video{height:auto;left:50%;min-height:100%;position:fixed;top:0;transform:translateX(-46%);width:auto}figure,video{z-index:-1}.container_all{margin:15px}header{align-items:center;display:flex;justify-content:space-between}.home_btn{color:#fcfcfc;cursor:pointer;font-size:18px}.expo_logo{width:25%}.ai_contents{margin-top:150px;position:absolute;right:3%}.ai_contents_top{font-family:MICEGothic Bold}.ai_contents_bottom,.ai_contents_top{background:#fcfcfc;border-radius:10px 10px 10px 0;box-shadow:inset 0 -3px 6px 0 #9ca4ac,inset 0 -3px 6px 1px hsla(0,0%,100%,.5);padding:10px 15px}.ai_contents_bottom{margin-top:20px}.ai_contents_bottom_box{background:#013f7a;border-radius:15px;color:#fcfcfc;padding:10px 15px}.ai_contents_bottom_box:nth-of-type(2){margin:10px 0}.box{left:50%;margin-top:60%;top:50%}.object{align-content:stretch;align-items:center;display:flex;flex:0 1 100%;justify-content:center}.outline{animation:pulse 3s;animation-iteration-count:infinite;animation-timing-function:ease-out;border:8px solid #b5a4a4;border-radius:50%;height:60px;width:60px}.button,.outline{position:absolute}.button{background:#50cddd;border-radius:50%;box-shadow:0 0 80px #0084f9;height:120px;width:120px}#delayed{animation-delay:1.5s}#circlein{background:#6bd6e1;border-radius:50%;box-shadow:0 -2px 15px #e0ff94;height:100px;position:absolute;width:100px}.mic-icon{height:60px;margin:21px}.mic-icon,.modal{position:absolute}.modal{background-color:#fff;border-radius:80px 80px 0 0;box-shadow:0 2px 4px 0 rgba(14,30,37,.12),0 2px 16px 0 rgba(14,30,37,.32);display:none;height:30%;opacity:.94;text-align:center;top:70%;width:100%}.button_contain{display:flex;justify-content:center;margin-top:10%}#Cancellation,#Confirm{display:none;height:10%;top:70%;width:30%}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+    color:white;
+}
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MICEGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'MICEGothic';
+    width: 100%;
+    font-size: 16px;
+    color: #333333;
+}
+
+.video_all {
+    overflow: hidden;
+}
+
+video {position: fixed; top: 0px; left: 50%; transform: translateX(-46%);  min-height: 100%; width: auto; height: auto; z-index: -1; overflow: hidden;}
+figure {z-index: -1;} /*동영상을 묶어준 부분 레이어 낮춰줌. 백그라운드로 만드는 것!*/
+
+.container_all {
+    margin: 15px;
+}
+/*header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.home_btn {
+    font-size: 18px;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.expo_logo {
+    width: 25%;
+}
+
+/*말풍선*/
+.ai_contents {
+    position: absolute;
+    right: 3%;
+    margin-top: 150px;
+}
+
+.ai_contents_top {
+    background: #fcfcfc;
+    padding: 10px 15px;
+    border-radius: 10px 10px 10px 0;
+    font-family: 'MICEGothic Bold';
+    box-shadow: rgb(156, 164, 172) 0 -3px 6px 0px inset, rgb(255 255 255 / 50%) 0 -3px 6px 1px inset;
+}
+
+.ai_contents_bottom {
+    margin-top: 20px;
+    background: #fcfcfc;
+    padding: 10px 15px;
+    border-radius: 10px 10px 10px 0;
+    box-shadow: rgb(156, 164, 172) 0 -3px 6px 0px inset, rgb(255 255 255 / 50%) 0 -3px 6px 1px inset;
+}
+
+.ai_contents_bottom_box {
+    background: #013F7A;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: #fcfcfc;
+}
+
+.ai_contents_bottom_box:nth-of-type(2) {
+    margin: 10px 0;
+}
+
+
+/*마이크 CSS*/
+.box {
+  top: 50%;
+  left: 50%;
+  margin-top: 60%;
+}
+
+.object {
+  display: flex;
+	flex: 0 1 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.outline {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 8px solid #B5A4A4;
+  animation: pulse 3s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	position: absolute;
+}
+
+.button {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: #50CDDD;
+	box-shadow: 0px 0px 80px #0084F9;
+	position: absolute;
+}
+
+@keyframes pulse {
+  /* 0% {
+    transform: scale(0);
+    opacity: 0;
+		border: 65px solid #0B3082;
+  }
+  50% {
+		border: solid #A3FFC2;		
+		opacity: 0.8;
+  }
+	
+	 90% {
+    transform: scale(3.2);
+		opacity: 0.2;
+		border: 3px solid #2E3CFF;
+  }
+  100% {
+    transform: scale(3.3);
+		opacity: 0;
+		border: 1px solid #7A89FF;
+  } */
+}
+
+#delayed {
+	animation-delay: 1.5s;
+}
+
+#circlein {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: #6BD6E1;
+	box-shadow: 0px -2px 15px #E0FF94;
+	position: absolute;
+}
+
+.mic-icon {
+	height: 60px;
+	position: absolute;
+	margin: 21px;
+}
+
+/*모달*/
+.modal{
+  position: absolute;
+  top:70%;
+  width:100%;
+  height:30%;
+  background-color: white;
+  border-radius: 80px 80px 0 0;
+  text-align: center;
+  opacity: 0.94;
+  box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+  display: none;
+}
+.button_contain{
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  
+}
+#Confirm{
+  top:70%;
+  width:30%;
+  height:10%;
+  display: none;
+}
+#Cancellation{
+
+  top:70%;
+  width:30%;
+  height:10%;
+  display: none;
+}
+
+#Voice_error_btn{
+  position: absolute;
+  top:78%;
+  left:35%;
+  width:30%;
+  height:5%;
+  display: none;
+}

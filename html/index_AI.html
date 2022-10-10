@@ -12,9 +12,13 @@
     <div class="modal" id="modal">
         <p id="voice_text">원하시는 서비스를 말씀해보세요</p> 
             <div class="button_contain">
-                <button id="Confirm">확인</button>
-                <button id="Cancellation">취소</button>
+                <button id="Confirm">예</button>
+                <button id="Cancellation">닫기</button>
             </div>
+    </div>
+
+    <div id="Voice_error">
+        <button id="Voice_error_btn">다시 말하기</button>
     </div>
 
     <div class="video_all">
@@ -69,55 +73,120 @@
         </section>
     </div>
 <script>
-    let transcript
-    // const speech = new webkitSpeechRecognition;
+    // let transcript
+
+
+    let speech = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)(); 
+    let Confirm = document.getElementById('Confirm');
+    let Cancellation = document.getElementById('Cancellation');
+    let Voice_error_btn = document.getElementById('Voice_error_btn');
+    let voice_text = document.getElementById('voice_text');
+    let dummy_text = "말씀하신 내용이"
+    let dummy_text2 = "이(가) 맞습니까?"
+    let modal = document.getElementById('modal');
+
+
+
+
+
+
     if(!("webkitSpeechRecognition" in window)){
         alert("현재 브라우저에서는 Speech 지원이 불가능합니다 Chome 브라우저로 실행하세요.");
     } else {
-        const speech = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)(); 
-        const Confirm = document.getElementById('Confirm');
-        const Cancellation = document.getElementById('Cancellation');
-        const voice_text = document.getElementById('voice_text');
-        const dummy_text = "말씀하신 내용이"
-        const dummy_text2 = "이(가) 맞습니까?"
-        const modal = document.getElementById('modal');
-       
-
-         
+        // const speech = new window.webkitSpeechRecognition;
+        // const Confirm = document.getElementById('Confirm');
+        // const Cancellation = document.getElementById('Cancellation');
+        // const voice_text = document.getElementById('voice_text');
+        // const dummy_text = "말씀하신 내용이"
+        // const dummy_text2 = "이(가) 맞습니까?"
+        // const modal = document.getElementById('modal');
         document.getElementById("mic").addEventListener("click", () => {
         speech.start();
         modal.style.display = "block";
+        Confirm.style.display = "none";
+        Cancellation.style.display = "none";
         })
-            speech.addEventListener("result",(event) =>{
-            // console.log(event);       
-            transcript = event["results"][0][0].transcript; 
-            Confirm.style.display = "block";
-            Cancellation.style.display = "block";
+
+        
+
+        speech.addEventListener("result",(event) =>{
+        // console.log(event);
+        transcript = event["results"][0][0].transcript; 
+        Confirm.style.display = "block";
+        Cancellation.style.display = "block";
+            
+
+        // 음성재 확인창 및 예외처리
+        if(transcript == '화장실' || transcript == '화장실' ) {
             voice_text.innerText = ( dummy_text + '\u00A0' + transcript + '\u00A0' + dummy_text2 );
-            console.log(transcript);
+            Cancellation.style.display = "none";
+        } else if (transcript == '전시장' || transcript == '진행중인 행사'){
+            voice_text.innerText = ( dummy_text + '\u00A0' + transcript + '\u00A0' + dummy_text2 );
+            Cancellation.style.display = "none";
+        }
+        else{
+            voice_text.innerText = '죄송합니다 다시 한번 더 말씀해주세요';
+            Cancellation.style.position="absolute"
+            Cancellation.style.top="27%"
+            Cancellation.style.height="16%"
+            Cancellation.style.left = "45%"
+            Cancellation.style.display = "block";
+            Voice_error_btn.style.display = "block";
+            Voice_error_btn.style.left = "14%"
+            Confirm.style.display = "none";
+        }
+        console.log(transcript);
+        
+        for(let i=0; i<voicelist.length; i++){
+            console.log("sd");
+        }
+        })
 
-            })
 
-            Confirm.addEventListener("click" , function(){
-                console.log(transcript)
-            if( transcript == "화장실." || transcript == "화장실 위치" || transcript == "화장실 어디야"  || transcript == "화장실 안내" || transcript == "주차" ){
-                window.location.href = "https://juniklee.github.io/Yesu_c/html/index_expoC.html"
-            }else if( transcript == "행사." || transcript == "행사 안내" || transcript == "전시회"  || transcript == "전시회 안내" || transcript == "진행중인 행사"){
-                window.location.href = "https://juniklee.github.io/Yesu_c/html/index_ing.html"
-            }else if( transcript == "주차장." || transcript == "주차장 위치" || transcript == "주차장 어디야"  || transcript == "주차장 안내" || transcript == "주차"){
-                window.location.href = "https://juniklee.github.io/Yesu_c/html/index_parking.html"
-            }
-            })     
 
-            Cancellation.addEventListener("click" , function(){
-                console.log('취소버튼 클릭')
-                modal.style.display = "none";
-                speech.stop();
-                voice_text.innerText = '원하시는 서비스를 말씀해보세요'
-            }) 
 
-            speech.lang = 'ko-KR';
+        // 음성 확인창 
+        Confirm.addEventListener("click" , function(){
+            console.log(transcript)
+        if( transcript == '화장실'){
+            window.location.href = "https://juniklee.github.io/yeso-b/html/index_expoC.html"
+        }else if( transcript == "진행중인 행사"){
+            window.location.href = "https://juniklee.github.io/yeso-b/html/index_ing.html"
+        }else if( transcript == "주차장" || transcript == "주차장 위치" || transcript == "주차장 어디야"  || transcript == "주차장 안내" || transcript == "주차" || transcript == "주차안내" ){
+            window.location.href = "https://juniklee.github.io/yeso-b/html/index_parking.html"
+        } 
+
+    
+        
+        })     
+        // 음성 취소창 
+        Cancellation.addEventListener("click" , function(){
+            console.log('취소버튼 클릭')
+            modal.style.display = "none";
+            Voice_error_btn.style.display = "none";
+            Cancellation.style.display = "none";
+            speech.stop();
+            voice_text.innerText = '원하시는 서비스를 말씀해보세요'
+            ResetVoice()
+        }) 
+        // 음성 재확인 
+        Voice_error_btn.addEventListener("click" , function(){
+                speech.start();
+                Voice_error_btn.style.display = "none";
+                Cancellation.style.display = "none";
+        }) 
+    } 
+     // 할당값 초기화 
+    function ResetVoice(){
+        transcript = null
+        console.log('리셋된 음성은?' + transcript)
     }
+
+
+
+    // 한글 영어 테스트
+    speech.lang = 'ko-KR'; //선택하게 해줘야 할듯 . 
+        
 </script>
 </body>
 </html>
