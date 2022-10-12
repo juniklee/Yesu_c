@@ -7,6 +7,7 @@
       <title>주차안내</title>
       <link rel="stylesheet" href="../css/style_parking.css">
       <script src="https://kit.fontawesome.com/5ccccc0448.js" crossorigin="anonymous"></script>
+      <script src="../js/Vr.js" type="module" defer></script>
 </head>
 <body  oncontextmenu='return false'>
 
@@ -58,8 +59,15 @@
                   </div>
 
             </section>
-
       </div>
-
+<script>
+      document.body.addEventListener('touchstart', function(e) {
+  if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+  }
+}, {passive: false});
+</script>
 </body>
 </html>

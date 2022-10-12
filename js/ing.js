@@ -13,3 +13,9 @@ document.documentElement.addEventListener('touchend', function (event) {
          event.preventDefault(); 
        } lastTouchEnd = now; 
    }, false);
+
+   const close8 = () => {
+    document.querySelector(".modal_back").classList.add("hidden");
+  }
+   document.querySelector(".container_all").addEventListener("click", close8);
+

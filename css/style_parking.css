@@ -1,1 +1,8 @@
 *{box-sizing:border-box;margin:0;padding:0}a{color:#fff;text-decoration:none}@font-face{font-family:MICEGothic Bold;font-style:normal;font-weight:700;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic%20Bold.woff2) format("woff2")}@font-face{font-family:MICEGothic;font-style:normal;font-weight:400;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic.woff2) format("woff2")}body{background:url(../img/back_b.png);background-attachment:fixed;background-position:bottom;background-size:cover;color:#333;font-family:MICEGothic;font-size:16px;width:100%}.container_all{margin:15px}header{align-items:center;display:flex;justify-content:space-between}.home_btn{color:#fff;cursor:pointer;font-size:18px}.expo_logo{width:25%}.expo_parking{margin-top:15%}.expo_parking_title{color:#fff;cursor:pointer;font-family:MICEGothic Bold;font-size:1.8em;margin-bottom:10%}.expo_parking_contents{background:hsla(0,0%,51%,.3);border-radius:10px;margin:0 20px;padding:10px}.expo_parking_contents_box{border-bottom:1px solid #707070;color:#ededed;padding:25px 0}.expo_parking_contents_box:last-of-type{border-bottom:none}.expo_parking_contents_box i{font-size:20px;margin-bottom:8px}.expo_parking_contents_box p{margin-left:22px}
+canvas{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+}
