@@ -209,3 +209,6 @@ header {
   height:5%;
   display: none;
 }
+.Pinching{
+  touch-action: none;
+}
