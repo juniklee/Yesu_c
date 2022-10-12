@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 }
 html { -ms-content-zooming: none; touch-action: none; }
+body {
+  overscroll-behavior-x: none;
+}
 
 
 a {
