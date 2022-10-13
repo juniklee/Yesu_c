@@ -2,12 +2,20 @@
 
 body {
     overscroll-behavior-x: none;
+    touch-action: pan-x;
   }
 
-canvas{
-    display: flex;
-    margin: 0 auto;
-    margin-top: 20%;
-    margin-bottom: 20%;
+/* 
+#canvasWrap{
+  border: 1px solid black;
+} */
+#canvasWrap2{
+  border: 1px solid black;
+  position: absolute;
+}
 
+#canvasWrap{
+  border: 1px solid black;
+  position: absolute;
+  display: none;
 }

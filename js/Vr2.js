@@ -7,23 +7,23 @@ import { OrbitControls } from "https://unpkg.com/three@0.108.0/examples/jsm/cont
 let scene, camera, renderer;
 let controls;
 
+
 const init = () => {
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(50, 2500 / 2500, 0.1, 800);
     camera.position.set(400, 20, 0);
 
-
-    const canvas = document.querySelector("#canvasWrap")
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(1000, 1000);
     renderer.setClearColor(0x000000); //배경 컬러
-    canvas.appendChild(renderer.domElement);
+    
+
+    const canvas = document.querySelector("#canvasWrap2");
     document.body.appendChild(renderer.domElement);
-
-
+    canvas.appendChild(renderer.domElement);
 
     //카메라 컨트롤
-    controls = new OrbitControls(camera, renderer.domElement);
+    controls = new OrbitControls(camera, renderer);
     controls.minDistance = 200;
     controls.maxDistance = 400;
     controls.enableDamping = true;
@@ -42,7 +42,7 @@ const init = () => {
             scene.add(roomMesh);
         });
     }
-    renderer.render(scene, camera);
+    renderer.render(scene, camera );
 };
 
 const animate = () => {
