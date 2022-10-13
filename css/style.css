@@ -1,1 +1,4 @@
 @font-face{font-family:MICEGothic Bold;font-style:normal;font-weight:700;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic%20Bold.woff2) format("woff2")}body{margin:0;overflow:hidden;padding:0}.text{border-radius:60px;color:#fff;display:flex;font-family:MICEGothic Bold;font-size:2.4em;height:5vh;justify-content:center;left:50%;line-height:5vh;position:absolute;top:70%;transform:translate(-50%,-40%);width:80%}#canvasWrap{height:100%;overflow:hidden;position:fixed;width:100%}.header{font-size:2em;margin-top:150px}.header,.header_2{color:#fff;display:flex;font-family:MICEGothic Bold;justify-content:center;width:100%}.header_2{font-size:3em}
+body {
+    overscroll-behavior-x: none;
+  }
