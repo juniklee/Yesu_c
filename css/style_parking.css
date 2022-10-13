@@ -2,6 +2,9 @@
 
 body {
     overscroll-behavior-x: none;
+    
+  }
+  .expo_logo{
     touch-action: pan-x;
   }
 
