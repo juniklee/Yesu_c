@@ -32,14 +32,14 @@ const init = () => {
 
     {
         const imageLoader = new THREE.TextureLoader();
-        imageLoader.load("../img/alma.jpg", (data) => {
+        imageLoader.load("../img/alma5.jpg", (data) => {
             // imageLoader.load("./image/bg.jpg", (data) => {
             const material = new THREE.MeshBasicMaterial({
                 map: data,
                 side: THREE.BackSide,
                 // side: THREE.FrontSide,
             });
-            const geometry = new THREE.SphereGeometry(400, 32, 32);
+            const geometry = new THREE.SphereGeometry(400, 64, 64);
             const roomMesh = new THREE.Mesh(geometry, material);
             scene.add(roomMesh);
         });
