@@ -1,7 +1,7 @@
 import * as THREE from "https://unpkg.com/three@0.108.0/build/three.module.js";
 import { OrbitControls } from "https://unpkg.com/three@0.108.0/examples/jsm/controls/OrbitControls.js";
 
-// let WIDTH = window.innerWidth;
+// let WIDTH = window.innerWidth2/2;
 // let HEIGHT = window.innerHeight;
 
 let scene, camera, renderer;
@@ -13,12 +13,14 @@ const init = () => {
     camera.position.set(400, 20, 0);
 
 
-    const canvas = document.querySelector("#canvasWrap")
+    
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(1000, 1000);
     renderer.setClearColor(0x000000); //배경 컬러
-    canvas.appendChild(renderer.domElement);
-    document.body.appendChild(renderer.domElement);
+
+    const canvas = document.querySelector("#canvasWrap")
+	canvas.appendChild(renderer.domElement); 
+	document.body.appendChild(renderer.domElement);
 
 
 

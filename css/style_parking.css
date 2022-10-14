@@ -11,17 +11,10 @@ body {
     touch-action: pan-x;
   }
 
-/* 
-#canvasWrap{
-  border: 1px solid black;
-} */
-#canvasWrap2{
-  border: 1px solid black;
-  position: absolute;
-}
 
-#canvasWrap{
-  border: 1px solid black;
-  position: absolute;
-  display: none;
+.expo_parking_title{
+  -webkit-user-select:all;
+  -moz-user-select:all;
+  -ms-user-select:all;
+  user-select:all
 }
