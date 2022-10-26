@@ -8,257 +8,211 @@
       <title>진행중인 행사</title>
       <link rel="stylesheet" href="../css/style_ing.css">
       <script src="https://kit.fontawesome.com/5ccccc0448.js" crossorigin="anonymous"></script>
+       <!-- 제이쿼리 불러오기  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- Slick 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+
+    <!--네이버 맵 API 불러오기-->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=28bxb12cu4"></script>
+
+
 </head>
 
 <body  oncontextmenu='return false'>
+      <div class="Slick">
+            <div id="center" class="center"  >
+              <div class="first">
+                <img src="../img/ing_baby.png">
+              </div>
+              <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+                <div class="first">
+                  <img src="../img/ing_baby.png">
+                </div>
+            </div>
+         </div>
 
-      <div class="container_all">
-            <header>
-                  <img class="expo_logo" src="../img/expo_logo_w.png" alt="expo_logo">
-                  <div class="home_btn">
-                        <a href="../index.html"><i class="fa-solid fa-house">&nbsp;처음으로</i></a>
-                  </div>
-            </header>
-            <section class="ing_event">
-                  <div class="ing_event_title">
-                        <a href="./index_AI.html"><i class="fa-solid fa-angle-left">&nbsp;진행중인 행사</i></a>
-                  </div>
-                  <div class="ing_event_all">
-                        <div class="ing_event_all_box">
-                              <img class="ing_event_all_box_img" src="../img/ing_baby.png" alt="키즈페어">
-                              <div class="ing_event_all_box_text">
-                                    <div class="ing_event_all_box_text_top">
-                                          <div class="ing_event_all_box_text_title">
-                                                <p>제 3회 여수맘 베이비 & 키즈페어</p>
-                                          </div>
-                                          <button class="ing_event_all_box_text_btn" onclick="modal2(0)">
-                                                <p>자세히보기</p>
-                                          </button>
-                                    </div>
-                                          <div class="modal_back hidden">
-                                                <div class="modal_kids">
-                                                      <img class="kids_img" src="../img/ing_baby.png">
-                                                      <div class="kids_text">
-                                                            <div class="kids_name">
-                                                                  <p>행사명</p>
-                                                                  <p>ㆍ제 3회 여수맘 베이비 & 키즈페어</p>
-                                                                  <p>행사기간</p>
-                                                                  <p>ㆍ2022. 10. 07.(금) ~ 09.(일) 3일간</p>
-                                                                  <p>관람시간</p>
-                                                                  <p>ㆍ10:00-18:00</p>
-                                                                  <p>개최장소</p>
-                                                                  <p>ㆍEDG 외 전시홀</p>
-
-                                                            </div>
-                                                            <button class="close_btn" onclick="close1(0)">
-                                                                  <p>닫기</p>
-                                                            </button>
-                                                      </div>
-                                                </div>
-                                          </div>                            
-                              </div>
-                        </div>
-
-
-
-                        <div class="ing_event_all_box">
-
-                              <img class="ing_event_all_box_img" src="../img/ing_food.png" alt="음식축제">
-
-                              <div class="ing_event_all_box_text">
-                                    <div class="ing_event_all_box_text_top">
-                                          <div class="ing_event_all_box_text_title">
-                                                <p>남도음식문화큰잔치</p>
-                                          </div>
-                                          <button class="ing_event_all_box_text_btn" id="btn_2" onclick="modal2(1)" >
-                                                <p>자세히보기</p>
-                                          </button>
-                                    </div>
-                                          <div class="modal_back hidden">
-                                                <div class="modal_kids">
-                                                      <img class="kids_img" src="../img/ing_baby.png">
-                                                      <div class="kids_text">
-                                                            <div class="kids_name">
-                                                                  <p>행사명</p>
-                                                                  <p>ㆍ제 3회 여수맘 베이비 & 키즈페어</p>
-                                                                  <p>행사기간</p>
-                                                                  <p>ㆍ2022. 10. 07.(금) ~ 09.(일) 3일간</p>
-                                                                  <p>관람시간</p>
-                                                                  <p>ㆍ10:00-18:00</p>
-                                                                  <p>개최장소</p>
-                                                                  <p>ㆍEDG 외 전시홀</p>
-                                                            </div>
-                                                            <button class="close_btn" onclick="close1(1)">
-                                                                  <p>닫기</p>
-                                                            </button>
-                                                      </div>
-                                                </div>
-                                          </div>  
-                              </div>
-                        </div>
-
-                        <div class="ing_event_all_box">
-
-                              <img class="ing_event_all_box_img" src="../img/ing_art.png" alt="미술제">
-
-                              <div class="ing_event_all_box_text">
-                                    <div class="ing_event_all_box_text_top">
-                                          <div class="ing_event_all_box_text_title">
-                                                <p>여수국제미술제</p>
-                                          </div>
-                                          <button class="ing_event_all_box_text_btn" onclick="modal2(2)">
-                                                <p>자세히보기</p>
-                                          </button>
-                                    </div>
-                                          <div class="modal_back hidden">
-                                                <div class="modal_kids">
-                                                      <img class="kids_img" src="../img/ing_baby.png">
-                                                      <div class="kids_text">
-                                                            <div class="kids_name">
-                                                                  <p>행사명</p>
-                                                                  <p>ㆍ제 3회 여수맘 베이비 & 키즈페어</p>
-                                                                  <p>행사기간</p>
-                                                                  <p>ㆍ2022. 10. 07.(금) ~ 09.(일) 3일간</p>
-                                                                  <p>관람시간</p>
-                                                                  <p>ㆍ10:00-18:00</p>
-                                                                  <p>개최장소</p>
-                                                                  <p>ㆍEDG 외 전시홀</p>
-
-                                                            </div>
-                                                            <button class="close_btn" onclick="close1(2)">
-                                                                  <p>닫기</p>
-                                                            </button>
-                                                      </div>
-                                                </div>
-                                          </div>  
-                              </div>
-                        </div>
-
-                        <div class="ing_event_all_box">
-
-                              <img class="ing_event_all_box_img" src="../img/ing_baby.png" alt="키즈페어">
-
-                              <div class="ing_event_all_box_text">
-                                    <div class="ing_event_all_box_text_top">
-                                          <div class="ing_event_all_box_text_title">
-                                                <p>제 3회 여수맘 베이비 & 키즈페어</p>
-                                          </div>
-                                          <button class="ing_event_all_box_text_btn" onclick="modal2(3)">
-                                                <p>자세히보기</p>
-                                          </button>
-                                    </div>
-                                          <div class="modal_back hidden">
-                                                <div class="modal_kids">
-                                                      <img class="kids_img" src="../img/ing_baby.png">
-                                                      <div class="kids_text">
-                                                            <div class="kids_name">
-                                                                  <p>행사명</p>
-                                                                  <p>ㆍ제 3회 여수맘 베이비 & 키즈페어</p>
-                                                                  <p>행사기간</p>
-                                                                  <p>ㆍ2022. 10. 07.(금) ~ 09.(일) 3일간</p>
-                                                                  <p>관람시간</p>
-                                                                  <p>ㆍ10:00-18:00</p>
-                                                                  <p>개최장소</p>
-                                                                  <p>ㆍEDG 외 전시홀</p>
-                                                            </div>
-                                                            <button class="close_btn" onclick="close1(3)">
-                                                                  <p>닫기</p>
-                                                            </button>
-                                                      </div>
-                                                </div>
-                                          </div>  
-                              </div>
-                        </div>
-
-                        <div class="ing_event_all_box">
-
-                              <img class="ing_event_all_box_img" src="../img/ing_food.png" alt="음식축제">
-
-                              <div class="ing_event_all_box_text">
-                                    <div class="ing_event_all_box_text_top">
-                                          <div class="ing_event_all_box_text_title">
-                                                <p>남도음식문화큰잔치</p>
-                                          </div>
-                                          <button class="ing_event_all_box_text_btn" onclick="modal2(4)">
-                                                <p>자세히보기</p>
-                                          </button>
-                                    </div>
-                                          <div class="modal_back hidden">
-                                                <div class="modal_kids">
-                                                      <img class="kids_img" src="../img/ing_baby.png">
-                                                      <div class="kids_text">
-                                                            <div class="kids_name">
-                                                                  <p>행사명</p>
-                                                                  <p>ㆍ제 3회 여수맘 베이비 & 키즈페어</p>
-                                                                  <p>행사기간</p>
-                                                                  <p>ㆍ2022. 10. 07.(금) ~ 09.(일) 3일간</p>
-                                                                  <p>관람시간</p>
-                                                                  <p>ㆍ10:00-18:00</p>
-                                                                  <p>개최장소</p>
-                                                                  <p>ㆍEDG 외 전시홀</p>
-                                                            </div>
-                                                            <button class="close_btn" onclick="close1(4)">
-                                                                  <p>닫기</p>
-                                                            </button>
-                                                      </div>
-                                                </div>
-                                          </div>  
-                              </div>
-                        </div>
-
-                        <div class="ing_event_all_box">
-
-                              <img class="ing_event_all_box_img" src="../img/ing_art.png" alt="미술제">
-
-                              <div class="ing_event_all_box_text">
-                                    <div class="ing_event_all_box_text_top">
-                                          <div class="ing_event_all_box_text_title">
-                                                <p>여수국제미술제</p>
-                                          </div>
-                                          <button class="ing_event_all_box_text_btn" onclick="modal2(5)">
-                                                <p>자세히보기</p>
-                                          </button>
-                                    </div>
-                                          <div class="modal_back hidden">
-                                                <div class="modal_kids">
-                                                      <img class="kids_img" src="../img/ing_baby.png">
-                                                      <div class="kids_text">
-                                                            <div class="kids_name">
-                                                                  <p>행사명</p>
-                                                                  <p>ㆍ제 3회 여수맘 베이비 & 키즈페어</p>
-                                                                  <p>행사기간</p>
-                                                                  <p>ㆍ2022. 10. 07.(금) ~ 09.(일) 3일간</p>
-                                                                  <p>관람시간</p>
-                                                                  <p>ㆍ10:00-18:00</p>
-                                                                  <p>개최장소</p>
-                                                                  <p>ㆍEDG 외 전시홀</p>
-
-                                                            </div>
-                                                            <button class="close_btn" onclick="close1(5)">
-                                                                  <p>닫기</p>
-                                                            </button>
-                                                      </div>
-                                                </div>
-                                          </div>  
-                              </div>
-                        </div>
-
-                  </div>
-            </section>
-
-      </div>
-
+            <div id="map" style="width:100%;height:350px;">
+                  <p>sdsd</p>
+            </div>
+ 
       
-      <script src="../js/ing.js"></script>
-      <script>
-            document.body.addEventListener('touchstart', function(e) {
-      if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
-      }
-      }, {passive: false});
-      </script>
+<script src="../js/ing.js"></script>
+
+<!--터치이벤트 막기 함수(두손가락으로 꾹 누를떄 메뉴바 나오는거)-->
+<script>
+      document.body.addEventListener('touchstart', function(e) {
+if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
+e.preventDefault();
+e.stopPropagation();
+e.stopImmediatePropagation();
+}
+}, {passive: false});
+</script>
+
+<!--캐러셀 함수-->
+<script>
+$(function(){
+$('#center').slick({
+dots: true,
+centerMode: true,
+centerPadding: '60px',
+slidesToShow: 2,
+responsive: [
+{
+breakpoint: 768,
+settings: {
+arrows: false,
+centerMode: true,
+centerPadding: '40px',
+slidesToShow: 2
+}
+},
+{
+breakpoint: 480,
+settings: {
+arrows: false,
+centerMode: true,
+centerPadding: '40px',
+slidesToShow: 2
+}
+}
+]
+});
+})
+
+
+/*네이버 맵 API*/
+$(function() {
+	
+	initMap();
+	
+});
+
+
+function initMap() { 
+	
+	var areaArr = new Array();  // 지역을 담는 배열 ( 지역명/위도경도 )
+	areaArr.push(
+			/*지역구 이름*/			/*위도*/					/*경도*/				
+		 {location : '강남' , lat : '37.4959854' , lng : '127.0664091'},  // 강남구 중심좌표
+		 {location : '강동' , lat : '37.5492077' , lng : '127.1464824'},  // 강동구 중심좌표
+		 {location : '강북' , lat : '37.6469954' , lng : '127.0147158'},  // 강북구 중심좌표
+		 {location : '강서' , lat : '37.5657617' , lng : '126.8226561'},  // 강서구 중심좌표
+		 {location : '관악' , lat : '37.4603732' , lng : '126.9536086'},  // 관악구 중심좌표
+		 /*{location : '광진' , lat : '37.5574120' , lng : '127.0796211'},  // 광진구 중심좌표
+		 {location : '구로' , lat : '37.4954856' , lng : '126.858121' },  // 구로구 중심좌표
+		 {location : '금천' , lat : '37.4600969' , lng : '126.9001546'},  // 금천구 중심좌표
+		 {location : '노원' , lat : '37.6377533' , lng : '127.0754623'},  // 노원구 중심좌표
+		 {location : '도봉' , lat : '37.6658609' , lng : '127.0317674'},  // 도봉구 중심좌표
+		 {location : '동대문' , lat : '37.5838012' , lng : '127.0507003'},  // 동대문구 중심좌표
+		 {location : '동작' , lat : '37.4965037' , lng : '126.9443073'},  // 동작구 중심좌표
+		 {location : '마포' , lat : '37.5676507' , lng : '126.8854549'},  // 마포구 중심좌표
+		 {location : '서대문' , lat : '37.5820369' , lng : '126.9356665'},  // 서대문구 중심좌표
+		 {location : '서초' , lat : '37.4769528' , lng : '127.0378103'},  // 서초구 중심좌표
+		 {location : '성동' , lat : '37.5506753' , lng : '127.0409622'},  // 성동구 중심좌표
+		 {location : '성북' , lat : '37.606991'  , lng : '127.0232185'},  // 성북구 중심좌표
+		 {location : '송파' , lat : '37.5177941' , lng : '127.1127078'},  // 송파구 중심좌표
+		 {location : '양천' , lat : '37.5270616' , lng : '126.8561534'},  // 양천구 중심좌표
+		 {location : '영등포' , lat : '37.520641'  , lng : '126.9139242'},  // 영등포구 중심좌표
+		 {location : '용산' , lat : '37.5311008' , lng : '126.9810742'},  // 용산구 중심좌표
+		 {location : '은평' , lat : '37.6176125' , lng : '126.9227004'},  // 은평구 중심좌표
+		 {location : '종로' , lat : '37.5990998' , lng : '126.9861493'},  // 종로구 중심좌표
+		 {location : '중구' , lat : '37.5579452' , lng : '126.9941904'},  // 중구 중심좌표
+		 {location : '중랑구' , lat : '37.598031'  , lng : '127.092931' }   // 중랑구 중심좌표*/
+	);
+	
+	
+	
+	let markers = new Array(); // 마커 정보를 담는 배열
+	let infoWindows = new Array(); // 정보창을 담는 배열
+	
+	var map = new naver.maps.Map('map', {
+        center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576), //지도 시작 지점
+        zoom: 15
+    });
+	
+	
+	
+	
+	for (var i = 0; i < areaArr.length; i++) {
+		// 지역을 담은 배열의 길이만큼 for문으로 마커와 정보창을 채워주자 !
+
+	    var marker = new naver.maps.Marker({
+	        map: map,
+	        title: areaArr[i].location, // 지역구 이름 
+	        position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng) // 지역구의 위도 경도 넣기 
+	    });
+	    
+	    /* 정보창 */
+		 var infoWindow = new naver.maps.InfoWindow({
+		     content: '<div class="Marker_text"><b>' + areaArr[0].location + '</b><br>  <img src="../img/QR1.png"> 네이버 지도  - </div>',
+    
+		 }); // 클릭했을 때 띄워줄 정보 HTML 작성
+	    
+     var infoWindow1 = new naver.maps.InfoWindow({
+		     content: '<div class="Marker_text"><b>' + areaArr[1].location + '</b><br> <img src="../img/QR1.png"> 네이버억버억 지도  - </div>',
+    
+		 });
+
+     var infoWindow2 = new naver.maps.InfoWindow({
+		     content: '<div class="Marker_text"><b>' + areaArr[2].location + '</b><br>  네이버 뻑킹 지도  - </div>',
+    
+		 });
+
+
+		 markers.push(marker); // 생성한 마커를 배열에 담는다.
+		 infoWindows.push(infoWindow);
+     infoWindows.push(infoWindow1); 
+     infoWindows.push(infoWindow2) // 생성한 정보창을 배열에 담는다.
+	}
+    
+	 
+    function getClickHandler(seq) {
+		
+            return function(e) {  // 마커를 클릭하는 부분
+                var marker = markers[seq], // 클릭한 마커의 시퀀스로 찾는다.
+                    infoWindow = infoWindows[seq]; // 클릭한 마커의 시퀀스로 찾는다
+
+                if (infoWindow.getMap()) {
+                    infoWindow.close();
+                } else {
+                    infoWindow.open(map, marker); // 표출
+                }
+    		}
+    	}
+    
+    for (var i=0, ii=markers.length; i<ii; i++) {
+    	console.log(markers[i] , getClickHandler(i));
+        naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
+    }
+}
+</script>
 </body>
 
 </html>

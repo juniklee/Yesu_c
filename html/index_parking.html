@@ -1,128 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>주차안내</title>
-      <link rel="stylesheet" href="../css/style_parking.css">
-      <script src="https://kit.fontawesome.com/5ccccc0448.js" crossorigin="anonymous"></script>
-      <script src="../js/Vr.js" type="module" defer></script>
-      <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주차안내</title>
+    <link rel="stylesheet" href="../css/style_parking.css">
+    <script src="https://kit.fontawesome.com/5ccccc0448.js" crossorigin="anonymous"></script>
+    <script src="../js/Vr.js" type="module" defer></script>
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <!-- Slick 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"> -->
 </head>
+
 <body  oncontextmenu='return false'>
 
-      <div class="container_all">
-            <header>
-                  <img class="expo_logo" src="../img/expo_logo_w.png" alt="expo_logo">
-                  <div class="home_btn">
-                        <a href="../index.html"><i class="fa-solid fa-house">&nbsp;처음으로</i></a>
-                  </div>
-            </header>
+<div class="container_all">
+<header>
+    <img class="expo_logo" src="../img/expo_logo_w.png" alt="expo_logo">
+    <div class="home_btn">
+        <a href="../index.html"><i class="fa-solid fa-house">&nbsp;처음으로</i></a>
+    </div>
+</header>
 
-            <section class="expo_parking">
+<section class="expo_parking">
 
-                  <div class="expo_parking_title">
-                        <a href="./index_AI.html"><i class="fa-solid fa-angle-left">&nbsp;주차안내</i></a>
-                  
+    <div class="expo_parking_title">
+        <a href="./index_AI.html"><i class="fa-solid fa-angle-left">&nbsp;주차안내</i></a>
+    
 
-                  <div class="expo_parking_contents">
+    <div class="expo_parking_contents">
 
-                        <div class="expo_parking_contents_box">
-                              <i class="fa-solid fa-clock">&nbsp;운영시간</i>
-                              <p>07:00 ~ 22:00</p>
-                        </div>
-                        <div class="expo_parking_contents_box">
-                              <i class="fa-solid fa-coins">&nbsp;주차요금</i>
-                              <p>승용차 10분당 300원 (1일 최대 1만원),
-                                    버스 1일 1만원 (재입차 1회 허용)</p>
-                        </div>
-                        <div class="expo_parking_contents_box">
-                              <i class="fa-solid fa-credit-card">&nbsp;정산방식</i>
-                              <p>신용카드 결제(현금 결제 불가)</p>
-                        </div>
-                        <div class="expo_parking_contents_box">
-                              <i class="fa-solid fa-location-dot">&nbsp;정산기 위치</i>
-                              <p>국제관 A·B동 1층 각 1대, 아쿠아리움 
-                                    구 주차장 출구 1대</p>
-                        </div>
-                        <div class="expo_parking_contents_box">
-                              <i class="fa-solid fa-circle-dollar-to-slot">&nbsp;주차요금 할인 대상</i>
-                              <p>ㆍ50% 할인 : 경차, 저공해 차량, 국가공유자
-                                    & 장애인 차량 (신분증 소지시)</p>
-                              <p>ㆍ기타 할인 : 빅오쇼 관람객, 3시간 할인권
-                                    등 할인바코드권 소지자에 한해 할인 가능</p>
-                        </div>
-                        <div class="expo_parking_contents_box">
-                              <i class="fa-solid fa-circle-question">&nbsp;문의사항</i>
-                              <p>주차관제센터 ☎ 061-659-2098</p>
-                        </div>
-                  </div>
-            <div id="canvasWrap"></div>
+        <div class="expo_parking_contents_box">
+                <i class="fa-solid fa-clock">&nbsp;운영시간</i>
+                <p>07:00 ~ 22:00</p>
+        </div>
+        <div class="expo_parking_contents_box">
+                <i class="fa-solid fa-coins">&nbsp;주차요금</i>
+                <p>승용차 10분당 300원 (1일 최대 1만원),
+                    버스 1일 1만원 (재입차 1회 허용)</p>
+        </div>
+        <div class="expo_parking_contents_box">
+                <i class="fa-solid fa-credit-card">&nbsp;정산방식</i>
+                <p>신용카드 결제(현금 결제 불가)</p>
+        </div>
+        <div class="expo_parking_contents_box">
+                <i class="fa-solid fa-location-dot">&nbsp;정산기 위치</i>
+                <p>국제관 A·B동 1층 각 1대, 아쿠아리움 
+                    구 주차장 출구 1대</p>
+        </div>
+        <div class="expo_parking_contents_box">
+                <i class="fa-solid fa-circle-dollar-to-slot">&nbsp;주차요금 할인 대상</i>
+                <p>ㆍ50% 할인 : 경차, 저공해 차량, 국가공유자
+                    & 장애인 차량 (신분증 소지시)</p>
+                <p>ㆍ기타 할인 : 빅오쇼 관람객, 3시간 할인권
+                    등 할인바코드권 소지자에 한해 할인 가능</p>
+        </div>
+        <div class="expo_parking_contents_box">
+                <i class="fa-solid fa-circle-question">&nbsp;문의사항</i>
+                <p>주차관제센터 ☎ 061-659-2098</p>
+        </div>
+    </div>
 
-            <!--모달창-->
-            <div class="content">
-                  <h1>Modal Animations</h1>
-                  <div class="buttons">
-                      <a href="#none" id="one" class="button">A동</a>
-                  </div>
-              </div>
+<div id="canvasWrap"></div>
+
+<div class="Modalflex">
+    <!-- Trigger/Open The Modal -->
+    <button class="modal-custom-button w-btn-neon2" href="#myModal1">A동 위치 안내</button>
+    <!-- The Modal -->
+    <div id="myModal1" class="modal-custom">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">×</span>
+                <h2>A동 위치 안내</h2>
+            </div>
+            <div class="modal-body">
+                <img src="../img/QR1.png" width="20%" class="QR_img" >
+                    <p class="QR_Text">카메라를 이용해 QR코드를 태깅해보세요.</p>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Trigger/Open The Modal -->
+    <button class="modal-custom-button w-btn-neon2" href="#myModal2">B동 위치 안내</button>
+    <!-- The Modal -->
+    <div id="myModal2" class="modal-custom">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">×</span>
+                <h2>B동 위치 안내</h2>
+            </div>
+            <div class="modal-body">
+                <p> <img src="../img/websiteQRCode_noFrame.png" width="20%" class="QR_img"  ></p>
+                <p class="QR_Text">카메라를 이용해 QR코드를 태깅해보세요.</p>
+            </div>
+            <div class="modal-footer">
+            
+            </div>
+        </div>
+    </div>
+
+
+
+
+ 
+    <!-- Trigger/Open The Modal -->
+    <button class="modal-custom-button w-btn-neon2" href="#myModal3">C동 위치 안내</button>
+    <!-- The Modal -->
+    <div id="myModal3" class="modal-custom">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">×</span>
+                <h2>C동 위치 안내</h2>
+            </div>
+            <div class="modal-body">
+                <p> <img src="../img/websiteQRCode_noFrame.png" width="20%"  class="QR_img" ></p>
+                <p class="QR_Text">카메라를 이용해 QR코드를 태깅해보세요.</p>
+            </div>
+            <div class="modal-footer">
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                 <!-- 캐러셀 
+    <div class="Slick">
+        <div id="center" class="center"  >
+          <div class="first">
+            <img src="../img/expo_logo_w.png" width="100%">
+          </div>
+          <div class="first">2</div>
+          <div class="first">3</div>
+          <div class="first">4</div>
+          <div class="first">5</div>
+          <div class="first">6</div>
+          <div class="first">7</div>
+          <div class="first">8</div>
+          <div class="first">9</div>
+          <div class="first">10</div>
+        </div>
+     </div>
+-->
+          <script>
+            var btn = document.querySelectorAll("button.modal-custom-button");
+          var modals = document.querySelectorAll('.modal-custom');
+          var spans = document.getElementsByClassName("close-modal");
+          
+          for (var i = 0; i < btn.length; i++) {
+              btn[i].onclick = function (e) {
+                  e.preventDefault();
+                  modal = document.querySelector(e.target.getAttribute("href"));
+                  modal.style.display = "block";
+              }
               
-              
-              <div id="modal-container">
-                  <div class="modal-background">
-                      <div class="modal">
-                          <h2>위치 QR 이미지</h2>
-                          <p>A동 설명</p>
-                      </div>
-                  </div>
-              </div>
-            </section> 
+              spans[i].onclick = function () {
+                  for (var index in modals) {
+                      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+                  }
+              }
+          }
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function (event) {
+              if (event.target.classList.contains('modal-custom')) {
+                  for (var index in modals) {
+                      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+                  }
+              }
+          }
+          
+
+
+
+          $(function(){
+            $('#center').slick({
+                dots: true,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 2,
+                responsive: [
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 2
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 2
+                    }
+                    }
+                ]
+                });
+                        })
+
+          
+          </script>
+            </section>       
       </div>
-      <script>
-            document.body.addEventListener('touchstart', function(e) {
-      if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
-      }
-      }, {passive: false});
-
-
-
-      var $button         = $('.button'),
-    $modalContainer = $('#modal-container'),
-    $body           = $('body'),
-    $content        = $('.content'),
-    btnId;
-
-$button.on('click', function () {
-	btnId = $(this).attr('id');
-	
-	$modalContainer
-			.removeAttr('class')
-			.addClass(btnId);
-	$content
-			.removeAttr('class')
-			.addClass('content');
-	
-	$body.addClass('modal-active');
-	
-	if (btnId == 'two' || btnId == 'three'|| btnId == 'four') {
-		$content.addClass(btnId);
-	}
-	
-});
-
-$modalContainer.on('click', function () {
-	$(this).addClass('out');
-	$body.removeClass('modal-active');
-	if ($(this).hasClass(btnId)) {
-		
-		$content.addClass('out');
-		
-	}
-});
-      </script>
 </body>
 </html>

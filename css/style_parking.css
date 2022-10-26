@@ -19,156 +19,308 @@ canvas{
 }
 
 
-
-/*모달창*/
-/* 기본 콘텐츠 */
-
-
-
-.content {
-	min-height: 100%;
-	height: 100%;
-	/* background: #fff; */
-	position: relative;
-	z-index: 0;
+/*모달 css*/
+.Modalflex{
+    display: flex;
+	justify-content: center;
+	margin-top: 10%;
 }
-.content h1 {
-	padding: 75px 0 30px 0;
-	text-align: center;
-	font-size: 30px;
-	line-height: 30px;
+button{
+	background-color: red;
 }
-.content .buttons {
-	max-width: 800px;
-	margin: 0 auto;
-	text-align: center;
-}
-.content .buttons .button {
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;
-	background: #efefef;
-	padding: 10px 15px;
-	margin: 10px;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
-	color: #333;
-	font-weight: bold;
-}
-.content .buttons .button:hover {
-	color: #fff;
-	background: #009bd5;
-}
-
-/* modal style */
-html.modal-active,
-body.modal-active {
-	overflow: hidden;
-}
-#modal-container {
-	position: fixed;
-	left: 0;
-	top: 0;
-	display: table;
-	height: 100%;
-	width: 100%;
-	z-index: 1;
-	/* hidden 처리 */
-	transform: scale(0);
-}
-#modal-container .modal-background {
-	display: table-cell;
-	background: rgba(0, 0, 0, .8);
-	text-align: center;
-	vertical-align: middle;
-}
-#modal-container .modal-background .modal {
-	/* background: #fff; */
-	padding: 50px;
-	display: inline-block;
-	border-radius: 3px;
-	position: relative;
-}
-#modal-container .modal-background .modal h2 {
-	font-size: 25px;
-	line-height: 25px;
-	margin-bottom: 15px;
-	
-}
-#modal-container .modal-background .modal p {
-	font-size: 18px;
-	line-height: 22px;
+.modal-custom{display:none;
+    position:fixed;
+    z-index:1;
+    padding-top:100px;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    /* Black w/ opacity */
 }
 
 
-/*
- * ------------------------------
- * Unfolding Animation
- * ------------------------------
- */
-#modal-container.one {
-	/*transform: scaleX(0) scaleY(1);*/
-	animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+ .modal-content{
+    position:relative;
+    background-color:#fefefe;
+    margin:auto;
+    padding:0;
+    border:1px solid #888;
+    width:80%;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name:animatetop;
+    -webkit-animation-duration:0.4s;
+    animation-name:animatetop;
+    animation-duration:0.4s
 }
-#modal-container.one .modal-background .modal {
-	/* 초기 display: none 처럼 크기를 0 으로 하여 보여주지 않음*/
-	transform: scale(0);
-	/* 0.5 초 동안 애니메이션을 실행, 단 0.8초 지연시켜 0.8초 후에 애니메이션을 실행 */
-	animation: zoomIn .5s .8s  cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+
+ @-webkit-keyframes animatetop
+{
+     from{top:-300px; opacity:0}
+     to{top:0; opacity:1}
 }
-#modal-container.one.out {
-	transform: scale(1);
-	animation: unfoldOut 1s .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+
+@keyframes animatetop{
+    from{top:-300px; opacity:0}
+    to{top:0; opacity:1}
 }
-#modal-container.one.out .modal-background .modal {
-	animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+
+.close-modal{
+    color:white;
+    float:right;
+    font-size:28px;
+    font-weight:bold; 
+  
 }
-/* Dimmed showing */
-@keyframes unfoldIn {
-	0% {
-		transform: scaleX(0) scaleY(0.005);
-	}
-	50% {
-		/* 0.5 초간 세로 크기는 작은상태로 가로 너비만 확대  */
-		transform: scaleX(1) scaleY(0.005);
-	}
-	100% {
-		/* 0.5 초간 세로 크기를 확대 */
-		transform: scaleY(1) scaleX(1);
-	}
+.close-modal:hover,.close-modal:focus
+{
+    color:#000;
+    text-decoration:none;
+    cursor:pointer;
 }
-/* Show modal content  */
-@keyframes zoomIn {
-	from {
-		transform: scale(0);
-	}
-	to {
-		transform: scale(1);
-	}
+.modal-header{
+    padding:2px 16px;
+    background-color:#5cb85c;
+    color:white;
 }
-/* Hide modal content */
-@keyframes zoomOut {
-	from {
-		transform: scale(1);
-	}
-	to {
-		transform: scale(0);
-	}
+.modal-body{
+padding:2px 16px;
+color: #000;
+text-align: center;
+height: 74vh;
 }
-/* Dimmed hiding */
-@keyframes unfoldOut {
-	0% {
-		transform: scale(1)
-	}
-	50% {
-		transform: scaleX(1) scaleY(0.005);
-	}
-	100% {
-		transform: scaleX(0) scaleY(0.005);
-	}
+.QR_img{
+    margin-top: 8%;
 }
+.QR_Text{
+    margin-top: 8%;
+    font-size: 2.5em;
+}
+
+.modal-footer{
+padding:2px 16px;
+background-color:#5cb85c;
+color:white;
+ }
 
 
 
 
+ @keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+.w-btn-neon2 {
+    position: relative;
+    border: none;
+    min-width: 200px;
+    min-height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+    border-radius: 1000px;
+    color: darkslategray;
+    cursor: pointer;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    font-weight: 700;
+    transition: 0.3s;
+}
 
+.w-btn-neon2:hover {
+    transform: scale(1.2);
+}
+
+.w-btn-neon2:hover::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00ffcb;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 0.5s infinite;
+}
+
+
+/*캐러셀*/
+.Slick{
+    width: 50%;
+    margin-left: 25%;
+}
+.first{
+    border: 1px solid black;
+    height: 60vh;
+    
+}
+.slick-slide {
+    margin: 0 30px;  
+  }
+.slick-list {
+    margin: 0 -30px; 
+  }
+
+
+
+
+ .slick-loading .slick-list{
+    background:#fff url(ajax-loader.gif) center center no-repeat
+}
+@font-face{
+    font-family:slick;
+    font-weight:400;
+    font-style:normal;
+    src:url(fonts/slick.eot);
+    src:url(fonts/slick.eot?#iefix) format('embedded-opentype'),
+    url(fonts/slick.woff) format('woff'),
+    url(fonts/slick.ttf) format('truetype'),
+    url(fonts/slick.svg#slick) format('svg')
+}
+.slick-next,.slick-prev{
+    font-size:0;
+    line-height:0;
+    position:absolute;
+    top:50%;
+    display:block;
+    width:20px;
+    height:20px;
+    padding:0;
+    -webkit-transform:translate(0,-50%);
+    -ms-transform:translate(0,-50%);
+    transform:translate(0,-50%);
+    cursor:pointer;
+    color:transparent;
+    border:none;
+    outline:0;
+    background:0 0
+}
+.slick-next:focus,.slick-next:hover,.slick-prev:focus,.slick-prev:hover{
+    color:transparent;
+    outline:0;
+    background:0 0
+}
+.slick-next:focus:before,.slick-next:hover:before,.slick-prev:focus:before,.slick-prev:hover:before{
+    opacity:1
+}.slick-next.slick-disabled:before,.slick-prev.slick-disabled:before{
+    opacity:.25
+}
+.slick-next:before,.slick-prev:before{
+    font-family:slick;
+    font-size:90px;
+    line-height:1;
+    opacity:.75;
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+.slick-prev{
+    left:-25px
+}
+[dir=rtl]
+ .slick-prev{
+    right:-25px;
+    left:auto
+}
+.slick-prev:before{
+    content:'←'
+}
+[dir=rtl] 
+.slick-prev:before{
+    content:'→'
+}
+.slick-next{
+    right:-25px
+}[dir=rtl]
+ .slick-next{
+    right:auto;
+    left:-25px
+}
+.slick-next:before{
+    content:'→'
+}[dir=rtl] 
+.slick-next:before{
+    content:'←'
+}
+.slick-dotted.slick-slider{
+    margin-bottom:30px
+}
+.slick-dots{
+    position:absolute;
+    bottom:-25px;
+    display:block;
+    width:100%;
+    padding:0;
+    margin:0;
+    list-style:none;
+    text-align:center;
+ 
+}
+.slick-dots li{
+    position:relative;
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin:0 5px;
+    padding:0;
+    cursor:pointer
+}
+.slick-dots li button{
+    font-size:0;
+    line-height:0;
+    display:block;
+    width:20px;
+    height:20px;
+    padding:5px;
+    cursor:pointer;
+    color:transparent;
+    border:0;
+    outline:0;
+    background:0 0
+}
+.slick-dots li button:focus,.slick-dots li button:hover{
+    outline:0
+}
+.slick-dots li button:focus:before,.slick-dots li button:hover:before{
+    opacity:1
+}
+.slick-dots li button:before{
+    font-family:slick;
+    font-size:50px;
+    line-height:20px;
+    position:absolute;
+    top:0;
+    left:0;
+    width:20px;
+    height:20px;
+    content:'•';
+    text-align:center;
+    opacity:.25;
+    color:#000;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+}
+.slick-dots li.slick-active button:before{
+    opacity:.75;
+    color:#000;
+    font-size: 50px;;
+}
+/*# sourceMappingURL=slick-theme.min.css.map */
