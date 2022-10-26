@@ -196,18 +196,18 @@
         } 
     }, false);
 
-    document.documentElement.addEventListener('touchend', function (event) {
-     var now = (new Date()).getTime();
-     if (now - lastTouchEnd <= 300) {
-          event.preventDefault(); 
-        } lastTouchEnd = now; 
-    }, false);
+    // document.documentElement.addEventListener('touchend', function (event) {
+    //  var now = (new Date()).getTime();
+    //  if (now - lastTouchEnd <= 300) {
+    //       event.preventDefault(); 
+    //     } lastTouchEnd = now; 
+    // }, false);
 
 
-    // 오른쪽 마우스 클릭 방지
-    document.getElementById('wrapper').addEventListener('contextmenu', event => 
-    event.preventDefault()
-    );
+    // // 오른쪽 마우스 클릭 방지
+    // document.getElementById('wrapper').addEventListener('contextmenu', event => 
+    // event.preventDefault()
+    // );
 
 
 
