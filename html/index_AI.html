@@ -100,10 +100,9 @@
         // const dummy_text2 = "이(가) 맞습니까?"
         // const modal = document.getElementById('modal');
         document.getElementById("mic").addEventListener("click", () => {
+        // 한글 영어 테스트
+        speech.lang = 'ko-KR'; //선택하게 해줘야 할듯 . 
         speech.start();
-            // 한글 영어 테스트
-            speech.lang = 'ko-KR'; //선택하게 해줘야 할듯 . 
-
         modal.style.display = "block";
         Confirm.style.display = "none";
         Cancellation.style.display = "none";
